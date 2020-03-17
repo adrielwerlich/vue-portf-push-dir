@@ -1,0 +1,8 @@
+module.exports = {
+//   publicPath: process.env.NODE_ENV === 'production'
+//     ? '/my-portfolio/'
+//     : '/'
+devServer: {
+  host: "localhost"
+}
+}
