@@ -250,9 +250,9 @@
 						}
 					case 'desc':
 						if (this.language == 'en') {
-							return 'Studiyng software engineering and programming since 2007. From 2011 to current date working as volunteer in a religious organization and since 2018 working with remote freelance web development'
+							return 'Studiyng software engineering and programming since 2007. From 2011 to current date working as autonomous and since 2018 working with remote freelance web development'
 						} else if (this.language == 'pt') {
-							return 'Estudando e trabalhando com engenharia de software e programação desde 2007. Desde 2011 trabalhando como voluntário numa organização religiosa e desde 2018 trabalhando com desenvolvimento web remoto freelance'
+							return 'Estudando e trabalhando com engenharia de software e programação desde 2007. Desde 2011 trabalhando como autônomo e desde 2018 trabalhando com desenvolvimento web remoto freelance'
 						}
 					case 'techs':
 						if (this.language == 'en') {

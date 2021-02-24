@@ -1,6 +1,5 @@
 <template>
 	<div class="post-card">
-		<!-- <router-link :to="'/project/'+slug"> -->
 		<div class="card" :title="body">
 			<div class="card-image">
 				<figure class="image is-square" style="padding-top: 50%;">
@@ -11,18 +10,18 @@
 			<div class="card-content">
 				<div class="media">
 					<div class="media-content">
-						<p class="title is-4">{{title}}</p>
+						<p class="title is-4" style="min-height: 60px;">{{title}}</p>
 					</div>
 				</div>
 				<div class="content">
-					<p>{{snippet}}</p>
+					<p style="min-height: 100px;">{{snippet}}</p>
 					<a :href="link" target="__blank" class="button is-fullwidth">
 						{{ translate('view-project') }}
 					</a>
 				</div>
 			</div>
 		</div>
-		<!-- </router-link> -->
+		
 	</div>
 </template>
 
@@ -58,6 +57,7 @@
 				this.lang = lang
 			},
 			checkImage(title) {
+				
 				if (this.image.indexOf('krishna-said.png') > -1) {
 					
 					setTimeout( () => {

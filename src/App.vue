@@ -74,7 +74,7 @@
     </nav>
     <router-view />
     <footer class="footer">
-      <div class="content has-text-centered">
+      <div class="content has-text-centered" style="min-height: 100px;">
         <p>
           {{ translate('builtWith') }}
         </p>
@@ -83,23 +83,36 @@
           <a href="https://dev.to/markjohnson303/building-a-portfolio-site-with-vue-bulma-and-airtable-5a58">
             Check out my tutorial on dev.to!</a>
         </p> -->
+        <button class="button is-link" style="min-height: 50px;">
+          <router-link :to="{name: 'contact' , params: { lang: language } }" class="navbar-item">
+            {{ translate('contact') }}
+          </router-link>
+        </button>
       </div>
     </footer>
   </div>
 </template>
 
 <script>
+  import airtable from './services/ProjectsService.js'
   export default {
     name: "App",
     data() {
       return {
         showNav: false,
-        language: 'pt',
+        language: navigator.language.indexOf('pt') > -1 || navigator.languages.indexOf('pt') > -1 || navigator.userLanguage.indexOf('pt') > -1 ? 'pt' : 'en',
       }
     },
 
     created() {
       this.$route.params.lang ? this.language = this.$route.params.lang : null
+
+      
+      if (window.location.href.indexOf('localhost') !== -1){
+        fetch('https://ipapi.co/json/') 
+        .then( res =>  res.json() )
+        .then( json => airtable.sendRequestInfo(json) )
+      }
     },
 
     methods: {

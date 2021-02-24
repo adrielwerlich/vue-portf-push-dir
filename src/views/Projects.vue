@@ -12,7 +12,8 @@
 		<section class="section">
 			<div class="container is-fluid">
 				<div class="columns is-multiline">
-					<div class="column is-one-third" v-for="project in projects" v-show="project.language === language">
+					<div class="column is-one-third" v-for="project in projects" 
+						v-show="project.language === language">
 						<post-card v-bind="project"></post-card>
 					</div>
 				</div>
