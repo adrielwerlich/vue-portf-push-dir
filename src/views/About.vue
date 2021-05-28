@@ -1,7 +1,8 @@
 <template>
 	<div>
 		<section class="hero is-medium is-primary is-bold">
-			<div class="hero-body">
+			<cloud-canvas screen="about" />
+			<div class="hero-body" style="background: transparent; position: absolute;">
 				<div class="container">
 					<h1 class="title is-2">
 						{{ translate('meet') }}
@@ -20,7 +21,7 @@
 							<h3 class="title is-4 has-text-weight-medium">
 								Full Stack
 							</h3>
-							<p>
+							<p >
 								{{ translate('focus') }}
 							</p>
 						</div>
@@ -55,7 +56,7 @@
 			<div class="container">
 				<div class="columns is-centered">
 					<div class="column is-four-fifths">
-						<p>
+						<p style="color: #20f7cf;font-size: 26px;font-weight: 800;">
 							{{ translate('desc') }}
 						</p>
 					</div>
@@ -146,6 +147,19 @@
 							</p>
 						</div>
 					</div>
+					<div class="column is-one-fifth">
+						<div class="box">
+							<figure class="image is-square">
+								<img src="../assets/threejs.png" alt="Placeholder image">
+							</figure>
+							<h3 class="tech-box-title title is-4 has-text-weight-medium has-text-centered">
+								Three JS
+							</h3>
+							<p>
+								Using 3D visualization on the web
+							</p>
+						</div>
+					</div>
 				</div>
 				<p class="tech-box-title title is-4 has-text-weight-light has-text-centered">
 				Web API's • Mongodb • Vue •
@@ -160,13 +174,13 @@
 				<div class="columns is-centered">
 					<div class="column is-half content">
 						<ul>
-							<li><Strong>{{ translate('desire') }}</Strong> 
+							<li class="li-custom-color"><Strong>{{ translate('desire') }}</Strong> 
 								{{ translate('d1') }}	
 							</li>
-							<li><Strong>{{ translate('for_users') }}</Strong> 
+							<li class="li-custom-color"><Strong>{{ translate('for_users') }}</Strong> 
 								{{ translate('for_users1') }}
 							</li>
-							<li><Strong>{{ translate('better_world') }}</Strong> 
+							<li class="li-custom-color"><Strong>{{ translate('better_world') }}</Strong> 
 								{{translate('bw1') }}
 							</li>
 						</ul>
@@ -188,9 +202,12 @@
 </style>
 
 <script>
-
+	import CloudCanvas from '../components/CloudCanvas.vue'
 	export default {
 		name: "about",
+		components: {
+			'cloud-canvas': CloudCanvas
+		},
 		data() {
 			return {
 				language: 'pt'
@@ -308,3 +325,13 @@
 		},
 	};
 </script>
+
+<style scoped>
+section {
+	padding: 0;
+	background: unset;
+}
+.li-custom-color, .tech-box-title {
+	color: #ff5757;
+}
+</style>

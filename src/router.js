@@ -5,10 +5,11 @@ import About from "./views/About.vue";
 import Contact from "./views/Contact.vue";
 import Projects from "./views/Projects.vue"
 import Project from "./views/Project.vue"
+import ThreeDScroll from "./views/ThreeDScroll.vue"
 
 Vue.use(Router);
 
-export default new Router({
+const router = new Router({
   mode: "history",
   base: process.env.BASE_URL,
   routes: [
@@ -36,6 +37,20 @@ export default new Router({
       path: "/project/:slug",
       name: "project",
       component: Project
+    },
+    {
+      path: "/3d-scroll",
+      name: "3dScroll",
+      component: ThreeDScroll
     }
   ]
 });
+
+// router.beforeEach((to, from, next) => {
+//   debugger
+//   if (to.name == '3dScroll') {
+//     // .classList.remove("position-relative")
+//   }
+//   next()
+// })
+export default router

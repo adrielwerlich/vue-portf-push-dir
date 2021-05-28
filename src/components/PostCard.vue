@@ -61,7 +61,8 @@
 				if (this.image.indexOf('krishna-said.png') > -1) {
 					
 					setTimeout( () => {
-						document.getElementById(`image-${title}`).classList.add('less-width')
+						let el = document.getElementById(`image-${title}`)
+						el ? el.classList.add('less-width') : null
 					},2000)
 				} 
 				
